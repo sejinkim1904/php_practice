@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymphArt Articles{% endblock %}
+
+{% block body %}
+  {% if articles %}
+    <table>
+      <thead>
+        <tr>
+          <th>Todo Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for article in articles %}
+          <tr>
+            <td>{{ article.title }}</td>
+            <td>{{ article.body }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No articles to display</p>
+  {% endif %}
+{% endblock %}
